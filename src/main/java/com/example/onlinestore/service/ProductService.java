@@ -78,7 +78,7 @@ public class ProductService {
 
     public void deleteProduct(Long id) {
         Product product = productRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Товарp не найден"));
+                .orElseThrow(() -> new ResourceNotFoundException("Товар не найден"));
 
         productRepository.delete(product);
     }
