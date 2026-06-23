@@ -1,0 +1,33 @@
+package com.example.onlinestore.config;
+
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.enums.SecuritySchemeType;
+import io.swagger.v3.oas.annotations.info.Contact;
+import io.swagger.v3.oas.annotations.info.Info;
+import io.swagger.v3.oas.annotations.info.License;
+import io.swagger.v3.oas.annotations.security.SecurityScheme;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+@OpenAPIDefinition(
+        info = @Info(
+                title = "Online Store API",
+                version = "1.0.0",
+                description = "Backend API для интернет-магазина: пользователи, товары, корзина, заказы и платежи.",
+                contact = @Contact(
+                        name = "Yessim Yergobek",
+                        email = "esergobek@gmail.com"
+                ),
+                license = @License(
+                        name = "MIT License"
+                )
+        )
+)
+@SecurityScheme(
+        name = "bearerAuth",
+        type = SecuritySchemeType.HTTP,
+        scheme = "bearer",
+        bearerFormat = "JWT"
+)
+public class OpenApiConfig {
+}

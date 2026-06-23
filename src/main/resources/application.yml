@@ -3,9 +3,9 @@ spring:
     name: online-store
 
   datasource:
-    url: jdbc:postgresql://localhost:5433/online_store_db
-    username: postgres
-    password: postgres
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5433/online_store_db}
+    username: ${SPRING_DATASOURCE_USERNAME:postgres}
+    password: ${SPRING_DATASOURCE_PASSWORD:postgres}
 
   jpa:
     hibernate:
@@ -17,3 +17,16 @@ spring:
 
 server:
   port: 8081
+
+app:
+  jwt:
+    secret: ${APP_JWT_SECRET:my-super-secret-key-my-super-secret-key-123456}
+    expiration-ms: ${APP_JWT_EXPIRATION_MS:86400000}
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: method
+  api-docs:
+    path: /v3/api-docs

@@ -3,6 +3,7 @@ package com.example.onlinestore.controller;
 import com.example.onlinestore.dto.CategoryRequest;
 import com.example.onlinestore.dto.CategoryResponse;
 import com.example.onlinestore.service.CategoryService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@Tag(name = "Categories", description = "Категории товаров")
 @RequestMapping("/api/categories")
 public class CategoryController {
 
